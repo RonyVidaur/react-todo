@@ -21969,6 +21969,10 @@
 	
 	var _todosList2 = _interopRequireDefault(_todosList);
 	
+	var _createTodo = __webpack_require__(/*! ./create-todo */ 178);
+	
+	var _createTodo2 = _interopRequireDefault(_createTodo);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21978,7 +21982,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var todos = [{
-	  task: 'take a shower',
+	  task: 'Take a shower',
 	  isCompleted: false
 	}, {
 	  task: 'Be awesome',
@@ -22015,6 +22019,7 @@
 	          null,
 	          'Get stuff done!'
 	        ),
+	        _react2.default.createElement(_createTodo2.default, null),
 	        _react2.default.createElement(_todosList2.default, { todos: this.state.todos })
 	      );
 	    }
@@ -22057,6 +22062,10 @@
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
+	var _todosListItem = __webpack_require__(/*! ./todos-list-item */ 177);
+	
+	var _todosListItem2 = _interopRequireDefault(_todosListItem);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22078,7 +22087,7 @@
 	    key: 'renderItems',
 	    value: function renderItems() {
 	      return _lodash2.default.map(this.props.todos, function (todo, index) {
-	        return _react2.default.createElement(TodoListItem, _extends({ key: index }, todo));
+	        return _react2.default.createElement(_todosListItem2.default, _extends({ key: index }, todo));
 	      });
 	    }
 	  }, {
@@ -22089,7 +22098,7 @@
 	        null,
 	        _react2.default.createElement(_todosListHeader2.default, null),
 	        _react2.default.createElement(
-	          'tr',
+	          'tbody',
 	          null,
 	          this.renderItems()
 	        )
@@ -22132,16 +22141,16 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var TodoListHeader = function (_React$Component) {
-	  _inherits(TodoListHeader, _React$Component);
+	var TodosListHeader = function (_React$Component) {
+	  _inherits(TodosListHeader, _React$Component);
 	
-	  function TodoListHeader() {
-	    _classCallCheck(this, TodoListHeader);
+	  function TodosListHeader() {
+	    _classCallCheck(this, TodosListHeader);
 	
-	    return _possibleConstructorReturn(this, (TodoListHeader.__proto__ || Object.getPrototypeOf(TodoListHeader)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (TodosListHeader.__proto__ || Object.getPrototypeOf(TodosListHeader)).apply(this, arguments));
 	  }
 	
-	  _createClass(TodoListHeader, [{
+	  _createClass(TodosListHeader, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -22165,10 +22174,10 @@
 	    }
 	  }]);
 	
-	  return TodoListHeader;
+	  return TodosListHeader;
 	}(_react2.default.Component);
 	
-	exports.default = TodoListHeader;
+	exports.default = TodosListHeader;
 	
 	 ;(function register() { /* react-hot-loader/webpack */ if (process.env.NODE_ENV !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\todos-list-header.js"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\todos-list-header.js"); } } })();
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/node-libs-browser/~/process/browser.js */ 1)))
@@ -39183,6 +39192,176 @@
 		return module;
 	}
 
+
+/***/ },
+/* 177 */
+/*!*******************************************!*\
+  !*** ./src/components/todos-list-item.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var TodosListItem = function (_React$Component) {
+	  _inherits(TodosListItem, _React$Component);
+	
+	  function TodosListItem(props) {
+	    _classCallCheck(this, TodosListItem);
+	
+	    var _this = _possibleConstructorReturn(this, (TodosListItem.__proto__ || Object.getPrototypeOf(TodosListItem)).call(this, props));
+	
+	    _this.state = {
+	      isEditing: false
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(TodosListItem, [{
+	    key: 'renderActionSection',
+	    value: function renderActionSection() {
+	      if (this.state.isEditing) {
+	        return _react2.default.createElement(
+	          'td',
+	          null,
+	          _react2.default.createElement(
+	            'button',
+	            null,
+	            'Save'
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.onCancelClick.bind(this) },
+	            'Cancel'
+	          )
+	        );
+	      }
+	      return _react2.default.createElement(
+	        'td',
+	        null,
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.onEditClick.bind(this) },
+	          'Edit'
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          null,
+	          'Delete'
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'tr',
+	        null,
+	        _react2.default.createElement(
+	          'td',
+	          null,
+	          this.props.task
+	        ),
+	        this.renderActionSection()
+	      );
+	    }
+	  }, {
+	    key: 'onEditClick',
+	    value: function onEditClick() {
+	      this.setState({ isEditing: true });
+	    }
+	  }, {
+	    key: 'onCancelClick',
+	    value: function onCancelClick() {
+	      this.setState({ isEditing: false });
+	    }
+	  }]);
+	
+	  return TodosListItem;
+	}(_react2.default.Component);
+	
+	exports.default = TodosListItem;
+	
+	 ;(function register() { /* react-hot-loader/webpack */ if (process.env.NODE_ENV !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\todos-list-item.js"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\todos-list-item.js"); } } })();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/node-libs-browser/~/process/browser.js */ 1)))
+
+/***/ },
+/* 178 */
+/*!***************************************!*\
+  !*** ./src/components/create-todo.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var CreateTodo = function (_React$Component) {
+	  _inherits(CreateTodo, _React$Component);
+	
+	  function CreateTodo() {
+	    _classCallCheck(this, CreateTodo);
+	
+	    return _possibleConstructorReturn(this, (CreateTodo.__proto__ || Object.getPrototypeOf(CreateTodo)).apply(this, arguments));
+	  }
+	
+	  _createClass(CreateTodo, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "form",
+	        { onSubmit: this.handleCreate.bind(this) },
+	        _react2.default.createElement("input", { type: "text", placeholder: "What do you need to do", ref: "createInput" }),
+	        _react2.default.createElement(
+	          "button",
+	          null,
+	          "Create"
+	        )
+	      );
+	    } //render
+	
+	  }]);
+	
+	  return CreateTodo;
+	}(_react2.default.Component);
+	
+	exports.default = CreateTodo;
+	
+	 ;(function register() { /* react-hot-loader/webpack */ if (process.env.NODE_ENV !== 'production') { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\create-todo.js"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "C:\\Users\\Rony Vidaur\\Desktop\\Rony\\practicas web\\github\\react-todo\\src\\components\\create-todo.js"); } } })();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/node-libs-browser/~/process/browser.js */ 1)))
 
 /***/ }
 /******/ ]);

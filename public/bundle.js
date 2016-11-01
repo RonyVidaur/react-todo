@@ -22023,6 +22023,10 @@
 	        _react2.default.createElement(_todosList2.default, { todos: this.state.todos })
 	      );
 	    }
+	  }, {
+	    key: 'createTask',
+	    value: function createTask(task) {} //create Task
+	
 	  }]);
 	
 	  return App;
@@ -39353,6 +39357,12 @@
 	      );
 	    } //render
 	
+	  }, {
+	    key: "handleCreate",
+	    value: function handleCreate(event) {
+	      event.preventDefault();
+	      console.log(this.refs.createInput.value);
+	    }
 	  }]);
 	
 	  return CreateTodo;
